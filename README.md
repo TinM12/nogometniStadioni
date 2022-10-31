@@ -30,7 +30,7 @@ Ovaj repozitorij namijenjen je otvorenom skupu podataka o nogometnim stadionima.
 | sifGrad | INT | jedinstvena šifra grada u kojem se stadion nalazi |
 | sifKlub | INT | jedinstvena šifra kluba koji je domaćin stadiona |
 
-Primarni ključ: naziv
+Primarni ključ: naziv <br>
 Strani ključevi: sifGrad, sifKlub
 
 <br>
@@ -54,7 +54,7 @@ Primarni ključ: sifKlub
 | sifGrad | INT | jedinstvena šifra grada |
 | sifDrzava | INT | jedinstvena šifra države u kojoj se grad nalazi |
 
-Primarni ključ: sifGrad
+Primarni ključ: sifGrad <br>
 Strani ključ: sifDrzava
 
 <br>
