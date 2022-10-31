@@ -1,6 +1,6 @@
 # __Nogometni stadioni__
 
-Ovo je repozitorij namijenjen otvorenom skupu podataka o nogometnim stadionima. 
+Ovaj repozitorij namijenjen je otvorenom skupu podataka o nogometnim stadionima. Skup podataka spremljen je u bazu podataka PostgreSQL.
 <br></br>
 
 ## __Opis skupa podataka__
