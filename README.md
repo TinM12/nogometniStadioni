@@ -1,6 +1,6 @@
 # __Nogometni stadioni__
 
-Ovaj repozitorij namijenjen je otvorenom skupu podataka o nogometnim stadionima. Skup podataka spremljen je u bazu podataka PostgreSQL.
+Ovaj repozitorij namijenjen je za pohranu otvorenog skupa podataka o nogometnim stadionima. Skup podataka spremljen je u PostgreSQL bazu podataka. Za pojedini stadion u skupu podataka možemo pronaći informacije o nazivu stadiona, godini otvorenja, kapacitetu, rekordnoj prisutnosti, cijeni izgradnje, broju svečanih loža, gradu te državi u kojim se stadion nalazi. Također možemo pronaći imena i prezimena arhitekata koji su sudjelovali u izgradnji stadiona.
 <br></br>
 
 ## __Opis skupa podataka__
