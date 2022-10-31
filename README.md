@@ -30,6 +30,9 @@ Ovaj repozitorij namijenjen je otvorenom skupu podataka o nogometnim stadionima.
 | sifGrad | INT | jedinstvena šifra grada u kojem se stadion nalazi |
 | sifKlub | INT | jedinstvena šifra kluba koji je domaćin stadiona |
 
+Primarni ključ: naziv
+Strani ključevi: sifGrad, sifKlub
+
 <br>
 
 ### klub - entitet opisuje nogometne klubove
@@ -38,6 +41,8 @@ Ovaj repozitorij namijenjen je otvorenom skupu podataka o nogometnim stadionima.
 | --- | --- | --- |
 | imeKluba | VARCHAR | ime nogometnog kluba |
 | sifKlub | INT | jedinstvena šifra nogometnog kluba |
+
+Primarni ključ: sifKlub
 
 <br>
 
@@ -49,6 +54,9 @@ Ovaj repozitorij namijenjen je otvorenom skupu podataka o nogometnim stadionima.
 | sifGrad | INT | jedinstvena šifra grada |
 | sifDrzava | INT | jedinstvena šifra države u kojoj se grad nalazi |
 
+Primarni ključ: sifGrad
+Strani ključ: sifDrzava
+
 <br>
 
 ### drzava - entitet opisuje države
@@ -56,6 +64,8 @@ Ovaj repozitorij namijenjen je otvorenom skupu podataka o nogometnim stadionima.
 | --- | --- | --- |
 | nazivDrzava | VARCHAR | naziv države |
 | sifDrzava | INT | jedinstvena šifra države |
+
+Primarni ključ: sifDrzava
 
 <br>
 
@@ -67,6 +77,8 @@ Ovaj repozitorij namijenjen je otvorenom skupu podataka o nogometnim stadionima.
 | prezime | VARCHAR | prezime arhitekta |
 | sifArhitekt | INT | jedinstvena šifra arhitekta |
 
+Primarni ključ: sifArhitekt
+
 <br>
 
 ### arhitektRadioNa - entitet povezuje stadione sa njihovim arhitektima
@@ -75,3 +87,5 @@ Ovaj repozitorij namijenjen je otvorenom skupu podataka o nogometnim stadionima.
 | --- | --- | --- |
 | sifArhitekt | INT | jedinstvena šifra arhitekta |
 | naziv | VARCHAR | jedinstveni naziv stadiona  |
+
+Primarni ključ: naziv, sifArhitekt
