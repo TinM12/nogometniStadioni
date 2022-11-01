@@ -1,16 +1,18 @@
 # __Nogometni stadioni__
 
-Ovaj repozitorij namijenjen je za pohranu otvorenog skupa podataka o nogometnim stadionima. Za pojedini stadion u skupu podataka možemo pronaći informacije o nazivu stadiona, godini otvorenja, kapacitetu, rekordnoj prisutnosti, cijeni izgradnje, broju svečanih loža te državi i gradu u kojim se stadion nalazi. Također možemo pronaći imena i prezimena arhitekata koji su sudjelovali u izgradnji stadiona. Skup podataka spremljen je u PostgreSQL bazu podataka.
+Ovaj repozitorij otvorenog skupa podataka o nogometnim stadionima. U skupu podataka opisani su neki od najpoznatijih europskih nogometnih stadiona. Za pojedini stadion u skupu podataka su pohranjene informacije o nazivu stadiona, godini otvorenja, kapacitetu, rekordnoj prisutnosti, cijeni izgradnje, broju svečanih loža te državi i gradu u kojim se stadion nalazi. Skup podataka također sadrži i imena i prezimena arhitekata koji su sudjelovali u izgradnji stadiona.
 <br></br>
 
-## __Opis skupa podataka__
+## __Općenito__
 
 - Naslov: Nogometni stadioni
 - Autor: Tin Margetić
+- Kontakt: tin.margetic@fer.hr
 - Jezik: hrvatski
 - Licencija: Creative Commons Zero v1.0 Universal
-- Broj stadiona u skupu podataka: 15
 - URL repozitorija: https://github.com/TinM12/nogometniStadioni
+- Baza podataka: PostgreSQL
+- Broj stadiona u skupu podataka: 15
 - Datum otvaranja repozitorija: 31. 10. 2022.
 - Trenutačna verzija: 1.0
 <br></br>
