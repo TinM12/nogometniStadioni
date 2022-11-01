@@ -238,5 +238,60 @@
 				"prezime": "Soeters"
 			}
 		]
+	},
+	{
+		"naziv": "Tottenham Hotspur Stadium",
+		"nazivdrzava": "Engleska",
+		"nazivgrad": "London",
+		"godinaotvorenja": 2019,
+		"kapacitet": 62850,
+		"rekordnaprisutnost": 62027,
+		"imekluba": "Tottenham Hotspur FC",
+		"cijenaizgradnje": 1161086729,
+		"brojloza": 70,
+		"arhitekti": [
+			{
+				"ime": "Buro",
+				"prezime": "Happold"
+			}
+		]
+	},
+	{
+		"naziv": "Estadio Metropolitano",
+		"nazivdrzava": "Španjolska",
+		"nazivgrad": "Madrid",
+		"godinaotvorenja": 1994,
+		"kapacitet": 68456,
+		"rekordnaprisutnost": 67942,
+		"imekluba": "Club Atlético de Madrid",
+		"cijenaizgradnje": 240000000,
+		"brojloza": 78,
+		"arhitekti": [
+			{
+				"ime": "Antonio",
+				"prezime": "García"
+			}
+		]
+	},
+	{
+		"naziv": "Stade Vélodrome",
+		"nazivdrzava": "Francuska",
+		"nazivgrad": "Marseille",
+		"godinaotvorenja": 1937,
+		"kapacitet": 67394,
+		"rekordnaprisutnost": 65421,
+		"imekluba": "Olympique de Marseille",
+		"cijenaizgradnje": 268000000,
+		"brojloza": 65,
+		"arhitekti": [
+			{
+				"ime": "Henri",
+				"prezime": "Ploquin "
+			},
+			{
+				"ime": "Jean-Pierre",
+				"prezime": "Buffi "
+			}
+		]
 	}
 ]

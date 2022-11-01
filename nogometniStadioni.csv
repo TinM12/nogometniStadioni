@@ -1,4 +1,4 @@
-naziv,drzava,grad,godinaotvorenja,kapacitet,rekordnaprisutnost,domacin,cijenaizgradnje,brojloza,ime,prezime
+naziv,nazivdrzava,nazivgrad,godinaotvorenja,kapacitet,rekordnaprisutnost,imekluba,cijenaizgradnje,brojloza,ime,prezime
 Santiago Bernabéu,Španjolska,Madrid,1947,81044,129690,Real Madrid CF,1732943000,245,Manuel Muñoz,Monasterio
 Santiago Bernabéu,Španjolska,Madrid,1947,81044,129690,Real Madrid CF,1732943000,245,Luis Alemany,Soler
 Santiago Bernabéu,Španjolska,Madrid,1947,81044,129690,Real Madrid CF,1732943000,245,Antonio,Lamela
@@ -20,3 +20,7 @@ Anfield,Engleska,Liverpool,1884,54362,61905,Liverpool FC,221439000,64,Archibald,
 Etihad Stadium,Engleska,Manchester,2003,53400,54523,Manchester City FC,130532000,70,John,Laing
 Johan Cruijff Arena,Nizozemska,Amsterdam,1996,54990,54874,AFC Ajax,140000000,76,Rob,Schuurman
 Johan Cruijff Arena,Nizozemska,Amsterdam,1996,54990,54874,AFC Ajax,140000000,76,Sjoerd,Soeters
+Tottenham Hotspur Stadium,Engleska,London,2019,62850,62027,Tottenham Hotspur FC,1161086729,70,Buro,Happold
+Estadio Metropolitano,Španjolska,Madrid,1994,68456,67942,Club Atlético de Madrid,240000000,78,Antonio,García
+Stade Vélodrome,Francuska,Marseille,1937,67394,65421,Olympique de Marseille,268000000,65,Henri,Ploquin 
+Stade Vélodrome,Francuska,Marseille,1937,67394,65421,Olympique de Marseille,268000000,65,Jean-Pierre,Buffi 
