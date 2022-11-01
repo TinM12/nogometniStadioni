@@ -6,14 +6,13 @@ Ovaj repozitorij namijenjen je za pohranu otvorenog skupa podataka o nogometnim 
 ## __Opis skupa podataka__
 
 - Naslov: Nogometni stadioni
-- Trenutačna verzija: 1.0
 - Autor: Tin Margetić
 - Jezik: hrvatski
-- Datum otvaranja repozitorija: 31. 10. 2022.
 - Licencija: Creative Commons Zero v1.0 Universal
+- Broj stadiona u skupu podataka: 15
 - URI repozitorija: https://github.com/TinM12/nogometniStadioni
-- Encoding: UTF-8
-- kontakt e-mail: 
+- Datum otvaranja repozitorija: 31. 10. 2022.
+- Trenutačna verzija: 1.0
 <br></br>
 
 ## __Opis atributa__
