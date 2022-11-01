@@ -1,6 +1,6 @@
 # __Nogometni stadioni__
 
-Ovaj repozitorij otvorenog skupa podataka o nogometnim stadionima. U skupu podataka opisani su neki od najpoznatijih europskih nogometnih stadiona. Za pojedini stadion u skupu podataka su pohranjene informacije o nazivu stadiona, godini otvorenja, kapacitetu, rekordnoj prisutnosti, cijeni izgradnje, broju svečanih loža te državi i gradu u kojim se stadion nalazi. Skup podataka također sadrži i imena i prezimena arhitekata koji su sudjelovali u izgradnji stadiona.
+Ovo je repozitorij otvorenog skupa podataka o nogometnim stadionima. U skupu podataka opisani su neki od najpoznatijih europskih nogometnih stadiona. Za pojedini stadion u skupu podataka su pohranjene informacije o nazivu stadiona, godini otvorenja, kapacitetu, rekordnoj prisutnosti, cijeni izgradnje, broju svečanih loža te državi i gradu u kojim se stadion nalazi. Skup podataka također sadrži i imena i prezimena arhitekata koji su sudjelovali u izgradnji stadiona.
 <br></br>
 
 ## __Općenito__
