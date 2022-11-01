@@ -8,12 +8,13 @@ Ovo je repozitorij otvorenog skupa podataka o nogometnim stadionima. U skupu pod
 - Naslov: Nogometni stadioni
 - Autor: Tin Margetić
 - Kontakt: tin.margetic@fer.hr
-- Jezik: hrvatski
+- Jezik: Hrvatski / Croatian
 - Licencija: Creative Commons Zero v1.0 Universal
 - URL repozitorija: https://github.com/TinM12/nogometniStadioni
-- Baza podataka: PostgreSQL
+- Baza podataka: [PostgreSQL](https://www.postgresql.org/)
 - Broj stadiona u skupu podataka: 15
 - Datum otvaranja repozitorija: 31. 10. 2022.
+- Zadnje ažurirano: 1.11.2022.
 - Trenutačna verzija: 1.0
 <br></br>
 
