@@ -10,7 +10,7 @@ Ovaj repozitorij namijenjen je za pohranu otvorenog skupa podataka o nogometnim 
 - Jezik: hrvatski
 - Licencija: Creative Commons Zero v1.0 Universal
 - Broj stadiona u skupu podataka: 15
-- URI repozitorija: https://github.com/TinM12/nogometniStadioni
+- URL repozitorija: https://github.com/TinM12/nogometniStadioni
 - Datum otvaranja repozitorija: 31. 10. 2022.
 - Trenutačna verzija: 1.0
 <br></br>
