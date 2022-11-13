@@ -1,0 +1,297 @@
+[
+	{
+		"naziv": "Santiago Bernabéu",
+		"nazivdrzava": "Španjolska",
+		"nazivgrad": "Madrid",
+		"godinaotvorenja": 1947,
+		"kapacitet": 81044,
+		"rekordnaprisutnost": 129690,
+		"imekluba": "Real Madrid CF",
+		"cijenaizgradnje": 1732943000,
+		"brojloza": 245,
+		"arhitekti": [
+			{
+				"ime": "Manuel Muñoz",
+				"prezime": "Monasterio"
+			},
+			{
+				"ime": "Luis Alemany",
+				"prezime": "Soler"
+			},
+			{
+				"ime": "Antonio",
+				"prezime": "Lamela"
+			}
+		]
+	},
+	{
+		"naziv": "Camp Nou",
+		"nazivdrzava": "Španjolska",
+		"nazivgrad": "Barcelona",
+		"godinaotvorenja": 1957,
+		"kapacitet": 99354,
+		"rekordnaprisutnost": 120000,
+		"imekluba": "FC Barcelona",
+		"cijenaizgradnje": 1730916000,
+		"brojloza": 23,
+		"arhitekti": [
+			{
+				"ime": "Francesc",
+				"prezime": "Mitjans"
+			},
+			{
+				"ime": "Josep",
+				"prezime": "Soteras"
+			}
+		]
+	},
+	{
+		"naziv": "Old Trafford",
+		"nazivdrzava": "Engleska",
+		"nazivgrad": "Manchester",
+		"godinaotvorenja": 1910,
+		"kapacitet": 74310,
+		"rekordnaprisutnost": 76962,
+		"imekluba": "Manchester United",
+		"cijenaizgradnje": 101000000,
+		"brojloza": 21,
+		"arhitekti": [
+			{
+				"ime": "Archibald",
+				"prezime": "Leitch"
+			}
+		]
+	},
+	{
+		"naziv": "San Siro",
+		"nazivdrzava": "Italija",
+		"nazivgrad": "Milano",
+		"godinaotvorenja": 1926,
+		"kapacitet": 80018,
+		"rekordnaprisutnost": 82465,
+		"imekluba": "Inter Milan",
+		"cijenaizgradnje": 360000000,
+		"brojloza": 30,
+		"arhitekti": [
+			{
+				"ime": "Ulisse",
+				"prezime": "Stacchini"
+			},
+			{
+				"ime": "Alberto",
+				"prezime": "Cugini"
+			}
+		]
+	},
+	{
+		"naziv": "Parc des Princes",
+		"nazivdrzava": "Francuska",
+		"nazivgrad": "Pariz",
+		"godinaotvorenja": 1972,
+		"kapacitet": 48527,
+		"rekordnaprisutnost": 50370,
+		"imekluba": "Paris Saint-Germain",
+		"cijenaizgradnje": 750000000,
+		"brojloza": 20,
+		"arhitekti": [
+			{
+				"ime": "Roger",
+				"prezime": "Taillibert"
+			},
+			{
+				"ime": "Siavash",
+				"prezime": "Teimouri"
+			}
+		]
+	},
+	{
+		"naziv": "Signal Iduna Park",
+		"nazivdrzava": "Njemačka",
+		"nazivgrad": "Dortmund",
+		"godinaotvorenja": 1974,
+		"kapacitet": 81365,
+		"rekordnaprisutnost": 83000,
+		"imekluba": "BV Borussia Dortmund",
+		"cijenaizgradnje": 200000000,
+		"brojloza": 11,
+		"arhitekti": [
+			{
+				"ime": "Ulrich",
+				"prezime": "Drahtler"
+			}
+		]
+	},
+	{
+		"naziv": "Allianz arena",
+		"nazivdrzava": "Njemačka",
+		"nazivgrad": "München",
+		"godinaotvorenja": 2005,
+		"kapacitet": 75024,
+		"rekordnaprisutnost": 76576,
+		"imekluba": "FC Bayern München",
+		"cijenaizgradnje": 340000000,
+		"brojloza": 106,
+		"arhitekti": [
+			{
+				"ime": "Jacques",
+				"prezime": "Herzog"
+			},
+			{
+				"ime": "Pierre",
+				"prezime": "de Meuron"
+			}
+		]
+	},
+	{
+		"naziv": "Stadion Maksimir",
+		"nazivdrzava": "Hrvatska",
+		"nazivgrad": "Zagreb",
+		"godinaotvorenja": 1912,
+		"kapacitet": 35123,
+		"rekordnaprisutnost": 64138,
+		"imekluba": "GNK Dinamo Zagreb",
+		"cijenaizgradnje": 47810000,
+		"brojloza": 8,
+		"arhitekti": [
+			{
+				"ime": "Branko",
+				"prezime": "Kincl"
+			}
+		]
+	},
+	{
+		"naziv": "Emirates Stadium",
+		"nazivdrzava": "Engleska",
+		"nazivgrad": "London",
+		"godinaotvorenja": 2006,
+		"kapacitet": 60704,
+		"rekordnaprisutnost": 60161,
+		"imekluba": "Arsenal FC",
+		"cijenaizgradnje": 454533000,
+		"brojloza": 152,
+		"arhitekti": [
+			{
+				"ime": "Tom",
+				"prezime": "Jones"
+			},
+			{
+				"ime": "Marc",
+				"prezime": "Spinner"
+			},
+			{
+				"ime": "Mark",
+				"prezime": "Craine"
+			}
+		]
+	},
+	{
+		"naziv": "Anfield",
+		"nazivdrzava": "Engleska",
+		"nazivgrad": "Liverpool",
+		"godinaotvorenja": 1884,
+		"kapacitet": 54362,
+		"rekordnaprisutnost": 61905,
+		"imekluba": "Liverpool FC",
+		"cijenaizgradnje": 221439000,
+		"brojloza": 64,
+		"arhitekti": [
+			{
+				"ime": "Archibald",
+				"prezime": "Leitch"
+			}
+		]
+	},
+	{
+		"naziv": "Etihad Stadium",
+		"nazivdrzava": "Engleska",
+		"nazivgrad": "Manchester",
+		"godinaotvorenja": 2003,
+		"kapacitet": 53400,
+		"rekordnaprisutnost": 54523,
+		"imekluba": "Manchester City FC",
+		"cijenaizgradnje": 130532000,
+		"brojloza": 70,
+		"arhitekti": [
+			{
+				"ime": "John",
+				"prezime": "Laing"
+			}
+		]
+	},
+	{
+		"naziv": "Johan Cruijff Arena",
+		"nazivdrzava": "Nizozemska",
+		"nazivgrad": "Amsterdam",
+		"godinaotvorenja": 1996,
+		"kapacitet": 54990,
+		"rekordnaprisutnost": 54874,
+		"imekluba": "AFC Ajax",
+		"cijenaizgradnje": 140000000,
+		"brojloza": 76,
+		"arhitekti": [
+			{
+				"ime": "Rob",
+				"prezime": "Schuurman"
+			},
+			{
+				"ime": "Sjoerd",
+				"prezime": "Soeters"
+			}
+		]
+	},
+	{
+		"naziv": "Tottenham Hotspur Stadium",
+		"nazivdrzava": "Engleska",
+		"nazivgrad": "London",
+		"godinaotvorenja": 2019,
+		"kapacitet": 62850,
+		"rekordnaprisutnost": 62027,
+		"imekluba": "Tottenham Hotspur FC",
+		"cijenaizgradnje": 1161086729,
+		"brojloza": 70,
+		"arhitekti": [
+			{
+				"ime": "Buro",
+				"prezime": "Happold"
+			}
+		]
+	},
+	{
+		"naziv": "Estadio Metropolitano",
+		"nazivdrzava": "Španjolska",
+		"nazivgrad": "Madrid",
+		"godinaotvorenja": 1994,
+		"kapacitet": 68456,
+		"rekordnaprisutnost": 67942,
+		"imekluba": "Club Atlético de Madrid",
+		"cijenaizgradnje": 240000000,
+		"brojloza": 78,
+		"arhitekti": [
+			{
+				"ime": "Antonio",
+				"prezime": "García"
+			}
+		]
+	},
+	{
+		"naziv": "Stade Vélodrome",
+		"nazivdrzava": "Francuska",
+		"nazivgrad": "Marseille",
+		"godinaotvorenja": 1937,
+		"kapacitet": 67394,
+		"rekordnaprisutnost": 65421,
+		"imekluba": "Olympique de Marseille",
+		"cijenaizgradnje": 268000000,
+		"brojloza": 65,
+		"arhitekti": [
+			{
+				"ime": "Henri",
+				"prezime": "Ploquin "
+			},
+			{
+				"ime": "Jean-Pierre",
+				"prezime": "Buffi "
+			}
+		]
+	}
+]

@@ -1,0 +1,32 @@
+.stadiumBackground {
+    background-image: url(/public/stadion.avif);
+    background-position: center;
+    background-size: cover;
+}
+
+.opis {
+    width: 75%;
+    padding: 1rem;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.naslov {
+    width: 30%;
+    margin: auto;
+    padding: 0.2rem; 
+}
+
+.downloadOkvir {
+    text-align: center;
+    padding: 1rem;
+}
+
+th, td {
+    padding: 0.5rem;
+}
+
+table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
