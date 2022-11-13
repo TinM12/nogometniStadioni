@@ -3,10 +3,10 @@
     "$id": "https://github.com/TinM12/nogometniStadioni/schema_nogometniStadioni.json",
     "type": "array",
     "default": [],
-    "title": "Schema nogometniStadioni",
+    "title": "Nogometni stadioni",
     "items": {
         "type": "object",
-        "title": "Schema nogometniStadioni",
+        "title": "Nogometni stadion",
         "required": [
             "naziv",
             "nazivdrzava",
@@ -43,7 +43,7 @@
             },
             "nazivdrzava": {
                 "type": "string",
-                "title": "Naziv drzave ",
+                "title": "Naziv drzave",
                 "examples": [
                     "Španjolska",
                     "Engleska",
