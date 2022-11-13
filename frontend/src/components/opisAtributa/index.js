@@ -10,7 +10,7 @@ function opisAtributa() {
                     <td>Tip</td>
                     <td>Opis</td>
                 </tr>
-                <tr className='tr2'>
+                <tr>
                     <td>naziv</td>
                     <td>VARCHAR</td>
                     <td>jedinstveni naziv stadiona</td>
@@ -20,7 +20,7 @@ function opisAtributa() {
                     <td>VARCHAR</td>
                     <td>naziv države u kojoj se stadion nalazi</td>
                 </tr>
-                <tr className='tr2'>
+                <tr>
                     <td>nazivGrad</td>
                     <td>VARCHAR</td>
                     <td>naziv grada u kojem se stadion nalazi</td>
@@ -30,7 +30,7 @@ function opisAtributa() {
                     <td>INT</td>
                     <td>godina otvorenja stadiona</td>
                 </tr>
-                <tr className='tr2'>
+                <tr>
                     <td>kapacitet</td>
                     <td>INT</td>
                     <td>kapacitet stadiona</td>
@@ -40,7 +40,7 @@ function opisAtributa() {
                     <td>INT</td>
                     <td>rekordna prisutnost u stadionu</td>
                 </tr>
-                <tr className='tr2'>
+                <tr>
                     <td>imeKluba</td>
                     <td>VARCHAR</td>
                     <td>ime kluba koji je domaćin stadiona</td>
@@ -50,7 +50,7 @@ function opisAtributa() {
                     <td>INT</td>
                     <td>cijena izgradnje stadiona u eurima</td>
                 </tr>
-                <tr className='tr2'>
+                <tr>
                     <td>brojLoza</td>
                     <td>INT</td>
                     <td>broj svečanih loža u stadionu</td>
@@ -60,7 +60,7 @@ function opisAtributa() {
                     <td>VARCHAR</td>
                     <td>ime arhitekta koji je sudjelovao u izgradnji stadiona</td>
                 </tr>
-                <tr className='tr2'>
+                <tr>
                     <td>prezime</td>
                     <td>VARCHAR</td>
                     <td>prezime arhitekta koji je sudjelovao u izgradnji stadiona</td>
