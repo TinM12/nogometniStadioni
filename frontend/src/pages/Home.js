@@ -24,7 +24,7 @@ function Home() {
             <Container style={{display: 'flex'}} >
                 <Paper className='opis' style={{backgroundColor: '#292c2e'}}>
                     <p>U ovom skupu podataka opisani su neki od najpoznatijih europskih nogometnih stadiona. 
-                    Za pojedini stadion u skupu podataka su pohranjene informacije o nazivu stadiona, godini otvorenja, 
+                    Za pojedini stadion u skupu podataka pohranjene su informacije o nazivu stadiona, godini otvorenja, 
                     kapacitetu, rekordnoj prisutnosti, cijeni izgradnje, broju svečanih loža te državi i gradu u kojim se 
                     stadion nalazi. Skup podataka također sadrži imena i prezimena arhitekata koji su sudjelovali u izgradnji
                     stadiona. 

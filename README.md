@@ -15,7 +15,7 @@ Ovo je repozitorij otvorenog skupa podataka o nogometnim stadionima. U skupu pod
 - Broj stadiona u skupu podataka: 15
 - Datum otvaranja repozitorija: 31. 10. 2022.
 - Zadnje ažurirano: 1.11.2022.
-- Trenutačna verzija: 1.0
+- Trenutačna verzija: 2.0
 <br></br>
 
 ## __Opis atributa__
