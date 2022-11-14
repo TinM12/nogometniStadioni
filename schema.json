@@ -28,7 +28,7 @@
             },
             "nazivdrzava": {
                 "type": "string",
-                "title": "Naziv drzave",
+                "title": "Naziv države",
                 "description": "Naziv države u kojoj se stadion nalazi"
             },
             "nazivgrad": {
@@ -72,7 +72,7 @@
                 "description": "Arhitekti koji su sudjelovali u izgradnji stadiona",
                 "items": {
                     "type": "object",
-                    "title": "A Schema",
+                    "title": "Arhitekt",
                     "required": [
                         "ime",
                         "prezime"
