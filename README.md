@@ -14,7 +14,7 @@ Ovo je repozitorij otvorenog skupa podataka o nogometnim stadionima. U skupu pod
 - Baza podataka: [PostgreSQL](https://www.postgresql.org/)
 - Broj stadiona u skupu podataka: 15
 - Datum otvaranja repozitorija: 31. 10. 2022.
-- Zadnje ažurirano: 1.11.2022.
+- Zadnje ažurirano: 14.11.2022.
 - Trenutačna verzija: 2.0
 <br></br>
 
