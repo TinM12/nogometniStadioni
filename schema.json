@@ -1,9 +1,10 @@
 {
     "$schema": "https://json-schema.org/draft/2019-09/schema",
-    "$id": "https://github.com/TinM12/nogometniStadioni/schema_nogometniStadioni.json",
+    "$id": "https://github.com/TinM12/nogometniStadioni/schema.json",
     "type": "array",
     "default": [],
-    "title": "Nogometni stadioni",
+    "title": "Nogometni Stadioni",
+    "description": "Otvoreni skup podataka o nogometnim stadionima",
     "items": {
         "type": "object",
         "title": "Nogometni stadion",
@@ -22,43 +23,53 @@
         "properties": {
             "naziv": {
                 "type": "string",
-                "title": "Naziv stadiona"
+                "title": "Naziv stadiona",
+                "description": "Jedinstveni naziv stadiona"
             },
             "nazivdrzava": {
                 "type": "string",
-                "title": "Naziv drzave"
+                "title": "Naziv drzave",
+                "description": "Naziv države u kojoj se stadion nalazi"
             },
             "nazivgrad": {
                 "type": "string",
-                "title": "Naziv grada"
+                "title": "Naziv grada",
+                "description": "Naziv grada u kojem se stadion nalazi"
             },
             "godinaotvorenja": {
                 "type": "integer",
-                "title": "Godina otvorenja"
+                "title": "Godina otvorenja",
+                "description": "Godina otvorenja stadiona"
             },
             "kapacitet": {
                 "type": "integer",
-                "title": "Kapacitet"
+                "title": "Kapacitet",
+                "description": "Kapacitet stadiona"
             },
             "rekordnaprisutnost": {
                 "type": "integer",
-                "title": "Rekordna prisutnost"
+                "title": "Rekordna prisutnost",
+                "description": "Rekordna prisutnost u stadionu"
             },
             "imekluba": {
                 "type": "string",
-                "title": "Ime kluba"
+                "title": "Ime kluba",
+                "description": "Ime kluba koji je domaćin stadiona"
             },
             "cijenaizgradnje": {
                 "type": "integer",
-                "title": "Cijena izgradnje"
+                "title": "Cijena izgradnje",
+                "description": "Cijena izgradnje stadiona"
             },
             "brojloza": {
                 "type": "integer",
-                "title": "Broj loža"
+                "title": "Broj loža",
+                "description": "Broj svečanih loža u stadionu"
             },
             "arhitekti": {
                 "type": "array",
                 "title": "Arhitekti",
+                "description": "Arhitekti koji su sudjelovali u izgradnji stadiona",
                 "items": {
                     "type": "object",
                     "title": "A Schema",
@@ -69,11 +80,13 @@
                     "properties": {
                         "ime": {
                             "type": "string",
-                            "title": "Ime"
+                            "title": "Ime",
+                            "description": "Ime arhitekta"
                         },
                         "prezime": {
                             "type": "string",
-                            "title": "Prezime"
+                            "title": "Prezime",
+                            "description": "Prezime arhitekta"
                         }
                     }
                 }
