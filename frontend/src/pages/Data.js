@@ -29,7 +29,7 @@ function Data() {
     //#########################################################
 
     var [input, setInput] = useState("");
-    const [select, setSelect] = useState(['wildcard', 'naziv', 'nazivdrzava', 'nazivgrad']);
+    const [select, setSelect] = useState([{}]);
     const stupci = data[0] && Object.keys(data[0]);
 
     function search() {
@@ -108,7 +108,7 @@ function Data() {
 
     return(
         <main className='stadiumBackground'>
-            <br></br>
+            <br />
             <Container>
                 <DataTable 
                     pagination columns={columns} data={podaci} theme="dark" title='Nogometni Stadioni' highlightOnHover
@@ -117,11 +117,11 @@ function Data() {
                             <CSVLink data={podaci} filename={"nogometniStadioniFiltered.csv"} style={{color: 'black', textDecoration: 'none', width: '50%', 
                                 fontSize: '1rem', backgroundColor: '#90CAF9', padding: '0.6rem', borderRadius: '2px',
                                 textAlign: 'center'}}>CSV DOWNLOAD</CSVLink>
-                            <br></br>
+                            <br />
                             <Button variant='contained' style={{ padding: '0.6rem', width: '50%' }} onClick={exportToJson}>
                                 <Typography>JSON download</Typography>
                             </Button>
-                            <br></br>
+                            <br />
                         </Stack>
                     }
                 />
@@ -133,7 +133,8 @@ function Data() {
                 <form>
                     <Stack direction='column' spacing='2rem'>
                         <TextField label="Unesite vrijednost" variant='standard' value={input} 
-                            onChange={e => setInput(e.target.value)}></TextField>
+                            onChange={e => setInput(e.target.value)}>
+                        </TextField>
                         <FormControl variant='standard'>
                             <InputLabel>Odaberite polje za pretragu</InputLabel>
                             <Select onChange={e => setSelect(e.target.value)} defaultValue="">
