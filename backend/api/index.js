@@ -1,4 +1,4 @@
-const Router = require('../Router');
+const Router = require('./views/Router');
 
 const API = (app) => {
     app.use('/', Router);

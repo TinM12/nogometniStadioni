@@ -1,4 +1,4 @@
-const db = require('../db');
+const db = require('../../db');
 const { validationResult } = require('express-validator');
 
 exports.listaKlubova = async(req, res) => {
@@ -24,9 +24,9 @@ exports.getKlub = async(req, res) => {
 
     let response = {status: "", message: "", response: ""};
     
-    if(isNaN(id)) {
+    if(isNaN(id) || id < 0 || id % 1 != 0) {
         response.status = "Bad Request";
-        response.message = "Id mora biti broj";
+        response.message = "Id kluba mora biti prirodni broj";
         response.response = null;
         return res.status(400).json(response);
     }
@@ -81,12 +81,47 @@ exports.postKlub = async(req, res) => {
         response.status = "Already Exists";
         response.message = "Već postoji klub sa tim nazivom";
         response.response = null;
-        return res.status(403).json(response);
+        return res.status(409).json(response);
     }
 
     //Dodavanje kluba
     const query2 = `INSERT INTO klub (imeKluba) VALUES($1)`;
-    const klub = await db.query(query2, [imeKluba]);
+    const result = await db.query(query2, [imeKluba]);
+    if(result.error) {
+        response.status = "Internal Server Error";
+        response.message = "Greška prilikom dohvata podataka";
+        response.response = null;
+        return res.status(500).json(response);
+    }
+
+    const klub = await db.query(`SELECT * FROM klub WHERE imeKluba=$1`, [imeKluba]);
+    if(klub.error) {
+        response.status = "Internal Server Error";
+        response.message = "Greška prilikom dohvata podataka";
+        response.response = null;
+        return res.status(500).json(response);
+    } 
+
+    response.status = "OK";
+    response.message = "Uspješno dodan klub";
+    response.response = klub.rows[0];
+    res.status(200).json(response);
+};
+
+exports.deleteKlub = async(req, res) => {
+    const id = req.params.id;
+
+    let response = {status: "", message: "", response: ""};
+    
+    if(isNaN(id) || id < 0 || id % 1 != 0) {
+        response.status = "Bad Request";
+        response.message = "Id kluba mora biti prirodni broj";
+        response.response = null;
+        return res.status(400).json(response);
+    }
+
+    const klub = await db.query(`SELECT * FROM klub WHERE sifKlub=$1`, [id]);
+
     if(klub.error) {
         response.status = "Internal Server Error";
         response.message = "Greška prilikom dohvata podataka";
@@ -94,8 +129,24 @@ exports.postKlub = async(req, res) => {
         return res.status(500).json(response);
     }
 
+    if(!klub.rowCount) {
+        response.status = "Not Found";
+        response.message = "Ne postoji klub sa tom šifrom";
+        response.response = null;
+        return res.status(404).json(response);
+    }
+
+    const query2 = `DELETE FROM klub WHERE sifKlub=$1`;
+    const result = await db.query(query2, [id]);
+    if(result.error) {
+        response.status = "Internal Server Error";
+        response.message = "Greška prilikom dohvata podataka";
+        response.response = null;
+        return res.status(500).json(response);
+    }
+
     response.status = "OK";
-    response.message = "Uspješno dodan klub";
-    response.response = undefined;
-    res.status(200).json(response);
+    response.message = "Klub uspješno obrisan";
+    response.response = null;
+    return res.status(200).json(response);
 };

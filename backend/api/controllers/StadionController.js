@@ -1,6 +1,5 @@
-const db = require('../db');
+const db = require('../../db');
 const { validationResult } = require('express-validator');
-const router = require('../Router');
 
 exports.listaStadiona = async (req, res) => {
     const stadioni = await db.query(`SELECT sifStadion, naziv, nazivdrzava, nazivgrad, godinaotvorenja, kapacitet, rekordnaprisutnost, imekluba, 
@@ -29,9 +28,9 @@ exports.getStadion = async (req, res) => {
 
     let response = {status: "", message: "", response: ""};
 
-    if(isNaN(id)) {
+    if(isNaN(id) || id < 0 || id % 1 != 0) {
         response.status = "Bad Request";
-        response.message = "Id mora biti broj";
+        response.message = "Id stadiona mora biti prirodni broj";
         response.response = null;
         return res.status(400).json(response);
     }
@@ -103,10 +102,10 @@ exports.postStadion = async (req, res) => {
     }
 
     if(!postojiKlub.rowCount) {
-        response.status = "Already Exists";
+        response.status = "Not Found";
         response.message = "Ne postoji klub sa tom šifrom";
         response.response = null;
-        return res.status(400).json(response);
+        return res.status(404).json(response);
     }
 
     //Provjera postoji li grad sa tom šifrom
@@ -120,16 +119,24 @@ exports.postStadion = async (req, res) => {
     }
 
     if(!postojiGrad.rowCount) {
-        response.status = "Already Exists";
+        response.status = "Not Found";
         response.message = "Ne postoji grad sa tom šifrom";
         response.response = null;
-        return res.status(400).json(response);
+        return res.status(404).json(response);
     }
 
     //Dodavanje stadiona
     const query4 = `INSERT INTO stadion (naziv, godinaotvorenja, kapacitet, rekordnaPrisutnost, 
         cijenaIzgradnje, brojLoza, sifGrad, sifKlub) VALUES($1, $2, $3, $4, $5, $6, $7, $8)`;
-    const stadion = await db.query(query4, [naziv, godinaOtvorenja, kapacitet, rekordnaPrisutnost, cijenaIzgradnje, brojLoza, sifGrad, sifKlub]);
+    const result = await db.query(query4, [naziv, godinaOtvorenja, kapacitet, rekordnaPrisutnost, cijenaIzgradnje, brojLoza, sifGrad, sifKlub]);
+    if(result.error) {
+        response.status = "Internal Server Error";
+        response.message = "Greška prilikom dohvata podataka";
+        response.response = null;
+        return res.status(500).json(response);
+    }
+
+    const stadion = await db.query(`SELECT * FROM stadion WHERE naziv=$1`, [naziv]);
     if(stadion.error) {
         response.status = "Internal Server Error";
         response.message = "Greška prilikom dohvata podataka";
@@ -139,7 +146,7 @@ exports.postStadion = async (req, res) => {
 
     response.status = "OK";
     response.message = "Uspješno dodan stadion";
-    response.response = undefined;
+    response.response = stadion.rows[0];
     res.status(200).json(response);
 };
 
@@ -149,9 +156,9 @@ exports.putStadion = async(req, res) => {
     
     let response = { status: "", message: "", response: ""};
 
-    if(isNaN(id)) {
+    if(isNaN(id) || id < 0 || id % 1 != 0) {
         response.status = "Bad Request";
-        response.message = "Id mora biti broj";
+        response.message = "Id stadiona mora biti prirodni broj";
         response.response = null;
         return res.status(400).json(response);
     }
@@ -212,10 +219,10 @@ exports.putStadion = async(req, res) => {
     }
 
     if(!postojiKlub.rowCount) {
-        response.status = "Already Exists";
+        response.status = "Not Found";
         response.message = "Ne postoji klub sa tom šifrom";
         response.response = null;
-        return res.status(400).json(response);
+        return res.status(404).json(response);
     }
 
     //Provjera postoji li grad sa tom šifrom
@@ -229,16 +236,24 @@ exports.putStadion = async(req, res) => {
     }
 
     if(!postojiGrad.rowCount) {
-        response.status = "Already Exists";
+        response.status = "Not Found";
         response.message = "Ne postoji grad sa tom šifrom";
         response.response = null;
-        return res.status(400).json(response);
+        return res.status(404).json(response);
     }
 
     //Mijenjanje stadiona
     const query4 = `UPDATE stadion SET naziv=$1, godinaotvorenja=$2, kapacitet=$3, rekordnaPrisutnost=$4, 
         cijenaIzgradnje=$5, brojLoza=$6, sifGrad=$7, sifKlub=$8 WHERE sifStadion=$9`;
-    const stadion = await db.query(query4, [naziv, godinaOtvorenja, kapacitet, rekordnaPrisutnost, cijenaIzgradnje, brojLoza, sifGrad, sifKlub, id]);
+    const result = await db.query(query4, [naziv, godinaOtvorenja, kapacitet, rekordnaPrisutnost, cijenaIzgradnje, brojLoza, sifGrad, sifKlub, id]);
+    if(result.error) {
+        response.status = "Internal Server Error";
+        response.message = "Greška prilikom dohvata podataka";
+        response.response = null;
+        return res.status(500).json(response);
+    }
+
+    const stadion = await db.query(`SELECT * FROM stadion WHERE sifStadion=$1`, [id]);
     if(stadion.error) {
         response.status = "Internal Server Error";
         response.message = "Greška prilikom dohvata podataka";
@@ -248,7 +263,7 @@ exports.putStadion = async(req, res) => {
 
     response.status = "OK";
     response.message = "Uspješno promijenjen stadion";
-    response.response = undefined;
+    response.response = stadion.rows[0];
     res.status(200).json(response);
 };
 
@@ -257,9 +272,9 @@ exports.deleteStadion = async(req, res) => {
 
     let response = { status: "", message: "", response: ""};
 
-    if(isNaN(id)) {
+    if(isNaN(id) || id < 0 || id % 1 != 0) {
         response.status = "Bad Request";
-        response.message = "Id mora biti broj";
+        response.message = "Id stadiona mora biti prirodni broj";
         response.response = null;
         return res.status(400).json(response);
     }
@@ -292,6 +307,6 @@ exports.deleteStadion = async(req, res) => {
 
     response.status = "OK";
     response.message = "Uspješno obrisan stadion";
-    response.response = undefined;
+    response.response = null;
     res.status(200).json(response);
 };
