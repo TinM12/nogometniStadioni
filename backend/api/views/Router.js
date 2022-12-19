@@ -8,6 +8,7 @@ const { getArhitekt, listaArhitekta } = require('../controllers/ArhitektControll
 const { getKlub, listaKlubova, postKlub, deleteKlub } = require('../controllers/KlubController');
 const { notFound } = require('../controllers/NotFoundController');
 const { notImplemented } = require('../controllers/NotImplementedController');
+const { getOpenApi } = require('../controllers/OpenApiController');
 
 //STADION
 router.get('/stadion', listaStadiona);
@@ -64,6 +65,9 @@ router.put('/klub/:id', notImplemented);
 router.delete('/klub/:id', deleteKlub);
 router.patch('/klub', notImplemented);
 router.options('/klub', notImplemented);
+
+//OPENAPI
+router.get('/open_api', getOpenApi);
 
 //OPCENITO
 router.get('*', notFound);

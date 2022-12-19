@@ -1,0 +1,487 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Nogometni Stadioni - OpenAPI",
+    "contact": {
+      "name": "Tin Margetić",
+      "email": "tin.margetic@fer.hr"
+    },
+    "license": {
+      "name": "Creative Commons Zero v1.0 Universal",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/stadion": {
+      "get": {
+        "tags": [
+          "stadion"
+        ],
+        "summary": "Dohvaća sve stadione iz skupa podataka",
+        "responses": {
+          "200": {
+            "description": "Uspješno dohvaćanje"
+          },
+          "500": {
+            "description": "Greška prilikom dohvaćanja podataka"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "stadion"
+        ],
+        "summary": "Stvara novi stadion",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "naziv": {
+                    "description": "Naziv stadiona",
+                    "example": "Camp Nou",
+                    "type": "string"
+                  },
+                  "godinaOtvorenja": {
+                    "description": "Godina otvorenja stadiona",
+                    "example": 1957,
+                    "type": "integer"
+                  },
+                  "kapacitet": {
+                    "description": "Kapacitet stadiona",
+                    "example": 99354,
+                    "type": "integer"
+                  },
+                  "rekordnaPrisutnost": {
+                    "description": "Rekordna prisutnost stadiona",
+                    "example": 120000,
+                    "type": "integer"
+                  },
+                  "cijenaIzgradnje": {
+                    "description": "Cijena izgradnje stadiona",
+                    "example": 1730916000,
+                    "type": "integer"
+                  },
+                  "brojLoza": {
+                    "description": "Broj svečanih loža u stadionu",
+                    "example": 23,
+                    "type": "integer"
+                  },
+                  "sifGrad": {
+                    "description": "Šifra grada u kojem se stadion nalazi",
+                    "example": 3,
+                    "type": "integer"
+                  },
+                  "sifKlub": {
+                    "description": "Šifra kluba koji je domaćin stadiona",
+                    "example": 4,
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Uspješno stvoren stadion"
+          },
+          "400": {
+            "description": "Neispravno zadani podaci"
+          },
+          "403": {
+            "description": "Već postoji stadion sa danim nazivom"
+          },
+          "404": {
+            "description": "Ne postoji klub ili grad sa danom šifrom"
+          },
+          "500": {
+            "description": "Greška prilikom unošenja podataka"
+          }
+        }
+      }
+    },
+    "/stadion/{sifStadion}": {
+      "get": {
+        "tags": [
+          "stadion"
+        ],
+        "summary": "Dohvaća pojedini stadion preko šifre stadiona",
+        "parameters": [
+          {
+            "name": "sifStadion",
+            "in": "path",
+            "description": "Jedinstvena šifra stadiona",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Uspješno dohvaćanje"
+          },
+          "400": {
+            "description": "Neispravna šifra stadiona"
+          },
+          "404": {
+            "description": "Ne postoji stadion sa danom šifrom"
+          },
+          "500": {
+            "description": "Greška prilikom dohvaćanja podataka"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "stadion"
+        ],
+        "summary": "Mijenja podatke stadiona preko šifre stadiona",
+        "parameters": [
+          {
+            "name": "sifStadion",
+            "in": "path",
+            "description": "Jedinstvena šifra stadiona",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "naziv": {
+                    "description": "Naziv stadiona",
+                    "example": "Camp Nou",
+                    "type": "string"
+                  },
+                  "godinaOtvorenja": {
+                    "description": "Godina otvorenja stadiona",
+                    "example": 1957,
+                    "type": "integer"
+                  },
+                  "kapacitet": {
+                    "description": "Kapacitet stadiona",
+                    "example": 99354,
+                    "type": "integer"
+                  },
+                  "rekordnaPrisutnost": {
+                    "description": "Rekordna prisutnost stadiona",
+                    "example": 120000,
+                    "type": "integer"
+                  },
+                  "cijenaIzgradnje": {
+                    "description": "Cijena izgradnje stadiona",
+                    "example": 1730916000,
+                    "type": "integer"
+                  },
+                  "brojLoza": {
+                    "description": "Broj svečanih loža u stadionu",
+                    "example": 23,
+                    "type": "integer"
+                  },
+                  "sifGrad": {
+                    "description": "Šifra grada u kojem se stadion nalazi",
+                    "example": 3,
+                    "type": "integer"
+                  },
+                  "sifKlub": {
+                    "description": "Šifra kluba koji je domaćin stadiona",
+                    "example": 4,
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Uspješno promijenjen stadion"
+          },
+          "400": {
+            "description": "Neispravno zadani podaci"
+          },
+          "403": {
+            "description": "Već postoji stadion sa danim nazivom"
+          },
+          "404": {
+            "description": "Ne postoji stadion, grad ili klub sa danom šifrom"
+          },
+          "500": {
+            "description": "Greška prilikom promjene podataka"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "stadion"
+        ],
+        "summary": "Briše pojedini stadion preko šifre stadiona",
+        "parameters": [
+          {
+            "name": "sifStadion",
+            "in": "path",
+            "description": "Jedinstvena šifra stadiona",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Uspješno obrisan stadion"
+          },
+          "400": {
+            "description": "Neispravna šifra stadiona"
+          },
+          "404": {
+            "description": "Ne postoji stadion sa danom šifrom"
+          },
+          "500": {
+            "description": "Greška prilikom brisanja podataka"
+          }
+        }
+      }
+    },
+    "/grad": {
+      "get": {
+        "tags": [
+          "grad"
+        ],
+        "summary": "Dohvaća sve gradove iz skupa podataka",
+        "responses": {
+          "200": {
+            "description": "Uspješno dohvaćanje"
+          },
+          "500": {
+            "description": "Greška prilikom dohvaćanja podataka"
+          }
+        }
+      }
+    },
+    "/grad/{sifGrad}": {
+      "get": {
+        "tags": [
+          "grad"
+        ],
+        "summary": "Dohvaća pojedini grad preko šifre grada",
+        "parameters": [
+          {
+            "name": "sifGrad",
+            "in": "path",
+            "description": "Jedinstvena šifra grada",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Uspješno dohvaćanje"
+          },
+          "400": {
+            "description": "Neispravna šifra grada"
+          },
+          "404": {
+            "description": "Ne postoji grad sa danom šifrom"
+          },
+          "500": {
+            "description": "Greška prilikom dohvaćanja podataka"
+          }
+        }
+      }
+    },
+    "/arhitekt": {
+      "get": {
+        "tags": [
+          "arhitekt"
+        ],
+        "summary": "Dohvaća sve arhitekte iz skupa podataka",
+        "responses": {
+          "200": {
+            "description": "Uspješno dohvaćanje"
+          },
+          "500": {
+            "description": "Greška prilikom dohvaćanja podataka"
+          }
+        }
+      }
+    },
+    "/arhitekt/{idArhitekt}": {
+      "get": {
+        "tags": [
+          "arhitekt"
+        ],
+        "summary": "Dohvaća pojedinog arhitekta preko njegovog id",
+        "parameters": [
+          {
+            "name": "idArhitekt",
+            "in": "path",
+            "description": "Jedinstveni id arhitekta",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Uspješno dohvaćanje"
+          },
+          "400": {
+            "description": "Neispravni id arhitekta"
+          },
+          "404": {
+            "description": "Ne postoji arhitekt sa danim id"
+          },
+          "500": {
+            "description": "Greška prilikom dohvaćanja podataka"
+          }
+        }
+      }
+    },
+    "/klub": {
+      "get": {
+        "tags": [
+          "klub"
+        ],
+        "summary": "Dohvaća sve klubove iz skupa podataka",
+        "responses": {
+          "200": {
+            "description": "Uspješno dohvaćanje"
+          },
+          "500": {
+            "description": "Greška prilikom dohvaćanja podataka"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "klub"
+        ],
+        "summary": "Stvara novi klub",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "imeKluba": {
+                    "description": "Ime kluba",
+                    "example": "FC Barcelona",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Uspješno stvoren klub"
+          },
+          "400": {
+            "description": "Neispravno ime kluba"
+          },
+          "403": {
+            "description": "Već postoji klub sa danim imenom"
+          },
+          "500": {
+            "description": "Greška prilikom unošenja podataka"
+          }
+        }
+      }
+    },
+    "/klub/{sifKlub}": {
+      "get": {
+        "tags": [
+          "klub"
+        ],
+        "summary": "Dohvaća pojedini klub preko šifre kluba",
+        "parameters": [
+          {
+            "name": "sifKlub",
+            "in": "path",
+            "description": "Jedinstvena šifra kluba",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Uspješno dohvaćen klub"
+          },
+          "400": {
+            "description": "Neispravna šifra kluba"
+          },
+          "404": {
+            "description": "Ne postoji klub sa danom šifrom"
+          },
+          "500": {
+            "description": "Greška prilikom dohvaćanja podataka"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "klub"
+        ],
+        "summary": "Briše pojedini klub preko šifre kluba",
+        "parameters": [
+          {
+            "name": "sifKlub",
+            "in": "path",
+            "description": "Jedinstvena šifra kluba",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Uspješno obrisan klub"
+          },
+          "400": {
+            "description": "Neispravna šifra kluba"
+          },
+          "404": {
+            "description": "Ne postoji klub sa danom šifrom"
+          },
+          "500": {
+            "description": "Greška prilikom brisanja podataka"
+          }
+        }
+      }
+    },
+    "/open_api": {
+      "get": {
+        "tags": [
+          "openapi"
+        ],
+        "summary": "Dohvaća openapi json datoteku",
+        "responses": {
+          "200": {
+            "description": "Uspješno dohvaćen OpenApi"
+          }
+        }
+      }
+    }
+  }
+}

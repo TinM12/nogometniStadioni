@@ -35,7 +35,7 @@ exports.getKlub = async(req, res) => {
 
     if(klub.error) {
         response.status = "Internal Server Error";
-        response.message = "Greška prilikom dohvata podataka";
+        response.message = "Greška prilikom unošenja podataka";
         response.response = null;
         return res.status(500).json(response);
     }
@@ -72,7 +72,7 @@ exports.postKlub = async(req, res) => {
 
     if(postojiKlub.error) {
         response.status = "Internal Server Error";
-        response.message = "Greška prilikom dohvata podataka";
+        response.message = "Greška prilikom unošenja podataka";
         response.response = null;
         return res.status(500).json(response);
     }
@@ -81,7 +81,7 @@ exports.postKlub = async(req, res) => {
         response.status = "Already Exists";
         response.message = "Već postoji klub sa tim nazivom";
         response.response = null;
-        return res.status(409).json(response);
+        return res.status(403).json(response);
     }
 
     //Dodavanje kluba
@@ -89,7 +89,7 @@ exports.postKlub = async(req, res) => {
     const result = await db.query(query2, [imeKluba]);
     if(result.error) {
         response.status = "Internal Server Error";
-        response.message = "Greška prilikom dohvata podataka";
+        response.message = "Greška prilikom unošenja podataka";
         response.response = null;
         return res.status(500).json(response);
     }
@@ -97,7 +97,7 @@ exports.postKlub = async(req, res) => {
     const klub = await db.query(`SELECT * FROM klub WHERE imeKluba=$1`, [imeKluba]);
     if(klub.error) {
         response.status = "Internal Server Error";
-        response.message = "Greška prilikom dohvata podataka";
+        response.message = "Greška prilikom unošenja podataka";
         response.response = null;
         return res.status(500).json(response);
     } 
@@ -124,7 +124,7 @@ exports.deleteKlub = async(req, res) => {
 
     if(klub.error) {
         response.status = "Internal Server Error";
-        response.message = "Greška prilikom dohvata podataka";
+        response.message = "Greška prilikom brisanja podataka";
         response.response = null;
         return res.status(500).json(response);
     }
@@ -140,7 +140,7 @@ exports.deleteKlub = async(req, res) => {
     const result = await db.query(query2, [id]);
     if(result.error) {
         response.status = "Internal Server Error";
-        response.message = "Greška prilikom dohvata podataka";
+        response.message = "Greška prilikom brisanja podataka";
         response.response = null;
         return res.status(500).json(response);
     }

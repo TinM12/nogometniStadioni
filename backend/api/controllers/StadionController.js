@@ -79,7 +79,7 @@ exports.postStadion = async (req, res) => {
     const postojiNaziv = await db.query(query1, [naziv]);
     if(postojiNaziv.error) {
         response.status = "Internal Server Error";
-        response.message = "Greška prilikom dohvata podataka";
+        response.message = "Greška prilikom unošenja podataka";
         response.response = null;
         return res.status(500).json(response);
     }
@@ -96,7 +96,7 @@ exports.postStadion = async (req, res) => {
     const postojiKlub = await db.query(query2, [sifKlub]);
     if(postojiKlub.error) {
         response.status = "Internal Server Error";
-        response.message = "Greška prilikom dohvata podataka";
+        response.message = "Greška prilikom unošenja podataka";
         response.response = null;
         return res.status(500).json(response);
     }
@@ -113,7 +113,7 @@ exports.postStadion = async (req, res) => {
     const postojiGrad = await db.query(query3, [sifGrad]);
     if(postojiGrad.error) {
         response.status = "Internal Server Error";
-        response.message = "Greška prilikom dohvata podataka";
+        response.message = "Greška prilikom unošenja podataka";
         response.response = null;
         return res.status(500).json(response);
     }
@@ -131,7 +131,7 @@ exports.postStadion = async (req, res) => {
     const result = await db.query(query4, [naziv, godinaOtvorenja, kapacitet, rekordnaPrisutnost, cijenaIzgradnje, brojLoza, sifGrad, sifKlub]);
     if(result.error) {
         response.status = "Internal Server Error";
-        response.message = "Greška prilikom dohvata podataka";
+        response.message = "Greška prilikom unošenja podataka";
         response.response = null;
         return res.status(500).json(response);
     }
@@ -139,7 +139,7 @@ exports.postStadion = async (req, res) => {
     const stadion = await db.query(`SELECT * FROM stadion WHERE naziv=$1`, [naziv]);
     if(stadion.error) {
         response.status = "Internal Server Error";
-        response.message = "Greška prilikom dohvata podataka";
+        response.message = "Greška prilikom unošenja podataka";
         response.response = null;
         return res.status(500).json(response);
     }
@@ -168,7 +168,7 @@ exports.putStadion = async(req, res) => {
     const postojiSifra = await db.query(sqlQuery, [id]);
     if(postojiSifra.error) {
         response.status = "Internal Server Error";
-        response.message = "Greška prilikom dohvata podataka";
+        response.message = "Greška prilikom promjene podataka";
         response.response = null;
         return res.status(500).json(response);
     }
@@ -196,7 +196,7 @@ exports.putStadion = async(req, res) => {
     const postojiNaziv = await db.query(query1, [naziv]);
     if(postojiNaziv.error) {
         response.status = "Internal Server Error";
-        response.message = "Greška prilikom dohvata podataka";
+        response.message = "Greška prilikom promjene podataka";
         response.response = null;
         return res.status(500).json(response);
     }
@@ -213,7 +213,7 @@ exports.putStadion = async(req, res) => {
     const postojiKlub = await db.query(query2, [sifKlub]);
     if(postojiKlub.error) {
         response.status = "Internal Server Error";
-        response.message = "Greška prilikom dohvata podataka";
+        response.message = "Greška prilikom promjene podataka";
         response.response = null;
         return res.status(500).json(response);
     }
@@ -230,7 +230,7 @@ exports.putStadion = async(req, res) => {
     const postojiGrad = await db.query(query3, [sifGrad]);
     if(postojiGrad.error) {
         response.status = "Internal Server Error";
-        response.message = "Greška prilikom dohvata podataka";
+        response.message = "Greška prilikom promjene podataka";
         response.response = null;
         return res.status(500).json(response);
     }
@@ -248,7 +248,7 @@ exports.putStadion = async(req, res) => {
     const result = await db.query(query4, [naziv, godinaOtvorenja, kapacitet, rekordnaPrisutnost, cijenaIzgradnje, brojLoza, sifGrad, sifKlub, id]);
     if(result.error) {
         response.status = "Internal Server Error";
-        response.message = "Greška prilikom dohvata podataka";
+        response.message = "Greška prilikom promjene podataka";
         response.response = null;
         return res.status(500).json(response);
     }
@@ -256,7 +256,7 @@ exports.putStadion = async(req, res) => {
     const stadion = await db.query(`SELECT * FROM stadion WHERE sifStadion=$1`, [id]);
     if(stadion.error) {
         response.status = "Internal Server Error";
-        response.message = "Greška prilikom dohvata podataka";
+        response.message = "Greška prilikom promjene podataka";
         response.response = null;
         return res.status(500).json(response);
     }
@@ -284,7 +284,7 @@ exports.deleteStadion = async(req, res) => {
     const postojiSifra = await db.query(query2, [id]);
     if(postojiSifra.error) {
         response.status = "Internal Server Error";
-        response.message = "Greška prilikom dohvata podataka";
+        response.message = "Greška prilikom brisanja podataka";
         response.response = null;
         return res.status(500).json(response);
     }
@@ -300,7 +300,7 @@ exports.deleteStadion = async(req, res) => {
     const stadion = await db.query(query, [id]);
     if(stadion.error) {
         response.status = "Internal Server Error";
-        response.message = "Greška prilikom dohvata podataka";
+        response.message = "Greška prilikom brisanja podataka";
         response.response = null;
         return res.status(500).json(response);
     }
