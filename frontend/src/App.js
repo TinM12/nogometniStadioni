@@ -4,6 +4,7 @@ import { CssBaseline, ThemeProvider } from '@mui/material';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import DefaultTheme from './DefaultTheme';
 import Home from './pages/Home';
+import Profile from './pages/Profile';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/data' element={<Data />} />
+                <Route path='/profile' element={<Profile />} />
             </Routes>
         </BrowserRouter>
     </ThemeProvider>

@@ -3,11 +3,31 @@ const app = express();
 const db = require('./db');
 const port = 8080;
 const API = require('./api');
+const cors = require('cors');
+const { expressjwt: jwt } = require('express-jwt');
+var jwks = require('jwks-rsa');
+const { axios } = require('axios');
 
 app.use(express.json());
 app.use(express.urlencoded({
     extended: true
 }));
+
+app.use(cors());
+
+var jwtCheck = jwt({
+    secret: jwks.expressJwtSecret({
+        cache: true,
+        rateLimit: true,
+        jwksRequestsPerMinute: 5,
+        jwksUri: 'https://dev-nxxsg5rr4rv0qdjz.us.auth0.com/.well-known/jwks.json'
+    }),
+    audience: 'Moj API',
+    issuer: 'https://dev-nxxsg5rr4rv0qdjz.us.auth0.com/',
+    algorithms: ['RS256']
+}).unless({ path: ['/dataCSV', '/dataJSON', '/']})
+
+app.use(jwtCheck);
 
 app.get('/dataCSV', async (req, res) => {
     const data = (await db.query(`SELECT naziv, nazivdrzava, nazivgrad, godinaotvorenja, kapacitet, rekordnaprisutnost,
@@ -29,11 +49,35 @@ app.get('/dataJSON', async (req, res) => {
     res.json(data);
 });
 
-API(app);
-
-app.use((req, res) => {
-    res.sendStatus(404);
+app.get('/profile', async (req, res) => {
+    try {
+        const accessToken = req.headers.authorization.split(' ')[1];
+        const response = await axios.get('https://dev-nxxsg5rr4rv0qdjz.us.auth0.com/userinfo', {
+            headers: {
+                authorization: `Bearer ${accessToken}`
+            }
+        });
+        const userInfo = response.data;
+        console.log("info " + userInfo);
+        res.send(userInfo);
+    } catch(err) {
+        res.send(err.message);
+    }
 });
+
+app.use((req, res, next) => {
+    const error = new Error('Not Found');
+    error.status = 404;
+    next(error);
+});
+
+app.use((error, req, res, next) => {
+    const status = error.status || '500';
+    const message = error.message || 'Internal Server Error';
+    res.status(status).send(message);
+});
+
+API(app);
 
 app.listen(port);
 console.log(`Started api on: ${port}`);

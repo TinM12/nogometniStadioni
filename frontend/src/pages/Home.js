@@ -3,6 +3,7 @@ import { Button, Paper, Stack, Typography } from '@mui/material';
 import { Container } from '@mui/system';
 import { useNavigate } from 'react-router-dom';
 import OpisAtributa from '../components/opisAtributa';
+import Header from '../components/Header';
 
 function Home() {
 
@@ -16,6 +17,7 @@ function Home() {
 
     return(
         <div className='stadiumBackground'>
+            <Header/>
             <br />
             <Paper className='naslov' style={{backgroundColor: '#292c2e'}}>
                 <h1 style={{textAlign: 'center'}}>Nogometni stadioni</h1>
