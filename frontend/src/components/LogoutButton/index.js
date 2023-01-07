@@ -7,7 +7,7 @@ const LogoutButton = () => {
 
   return (
     isAuthenticated && (
-      <Button variant='contained' onClick={() => logout()}>
+      <Button variant='contained' onClick={() => logout({ localOnly: true })}>
         Odjava
       </Button>
     )

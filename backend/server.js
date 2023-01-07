@@ -4,9 +4,9 @@ const db = require('./db');
 const port = 8080;
 const API = require('./api');
 const cors = require('cors');
-const { expressjwt: jwt } = require('express-jwt');
+var { expressjwt: jwt } = require('express-jwt');
 var jwks = require('jwks-rsa');
-const { axios } = require('axios');
+const axios = require('axios');
 
 app.use(express.json());
 app.use(express.urlencoded({
@@ -52,13 +52,13 @@ app.get('/dataJSON', async (req, res) => {
 app.get('/profile', async (req, res) => {
     try {
         const accessToken = req.headers.authorization.split(' ')[1];
-        const response = await axios.get('https://dev-nxxsg5rr4rv0qdjz.us.auth0.com/userinfo', {
+        const response = await axios.get('https://dev-nxxsg5rr4rv0qdjz.us.auth0.com/userInfo', {
             headers: {
                 authorization: `Bearer ${accessToken}`
             }
         });
         const userInfo = response.data;
-        console.log("info " + userInfo);
+        console.log(userInfo);
         res.send(userInfo);
     } catch(err) {
         res.send(err.message);
