@@ -25,9 +25,8 @@ var jwtCheck = jwt({
     audience: 'Moj API',
     issuer: 'https://dev-nxxsg5rr4rv0qdjz.us.auth0.com/',
     algorithms: ['RS256']
-}).unless({ path: ['/dataCSV', '/dataJSON', '/']})
+}).unless({ path: ['/dataCSV', '/dataJSON', '/', '/stadion/:id']})
 
-app.use(jwtCheck);
 
 app.get('/dataCSV', async (req, res) => {
     const data = (await db.query(`SELECT naziv, nazivdrzava, nazivgrad, godinaotvorenja, kapacitet, rekordnaprisutnost,
@@ -63,18 +62,6 @@ app.get('/profile', async (req, res) => {
     } catch(err) {
         res.send(err.message);
     }
-});
-
-app.use((req, res, next) => {
-    const error = new Error('Not Found');
-    error.status = 404;
-    next(error);
-});
-
-app.use((error, req, res, next) => {
-    const status = error.status || '500';
-    const message = error.message || 'Internal Server Error';
-    res.status(status).send(message);
 });
 
 API(app);

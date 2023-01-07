@@ -7,6 +7,8 @@ exports.listaStadiona = async (req, res) => {
     NATURAL JOIN arhitektradiona WHERE arhitektradiona.sifStadion = stadion.sifStadion) AS arhitekt) 
     AS arhitekti FROM stadion NATURAL JOIN grad NATURAL JOIN drzava NATURAL JOIN klub`);
 
+    console.log(stadioni.rows);
+
     let response = {status: "", message: "", response: ""};
 
     if(stadioni.error) {
@@ -53,6 +55,13 @@ exports.getStadion = async (req, res) => {
         response.response = null;
         return res.status(404).json(response);
     }
+
+    var temp = stadion.rows.at(0);
+    temp['@context'] = {"@vocab": "http://schema.org/", "ime": "givenName", "prezime": "familyName"};
+    temp['arhitekti'].forEach((arhitekt) => {
+        arhitekt['@type'] = 'Person';
+    });
+    temp['cijenaizgradnje'] = {"@value": temp['cijenaizgradnje'], "@type": "MonetaryAmount"};
 
     response.status = "OK";
     response.message = "Dohvaćen stadion";
