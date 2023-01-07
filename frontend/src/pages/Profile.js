@@ -6,7 +6,7 @@ import Header from "../components/Header";
 import { Navigate } from "react-router-dom";
 
 const Profile = () => {
-const { isAuthenticated, getAccessTokenSilently } = useAuth0();
+  const { isAuthenticated, getAccessTokenSilently } = useAuth0();
 
   const [userInfo, setUserInfo] = useState('');
 
@@ -43,7 +43,7 @@ const { isAuthenticated, getAccessTokenSilently } = useAuth0();
                 src={userInfo.picture}
                 >
               </Avatar>
-              <Typography variant='h5'>Name: {userInfo.name}</Typography>
+              <Typography variant='h5'>Nickname: {userInfo.nickname}</Typography>
               <Typography variant='h5'>Email: {userInfo.email}</Typography>
             </Stack>          
           </Paper>

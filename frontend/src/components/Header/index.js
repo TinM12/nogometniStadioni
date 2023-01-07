@@ -1,5 +1,5 @@
 import { useAuth0 } from '@auth0/auth0-react';
-import { AppBar, Button, Stack, Toolbar } from '@mui/material';
+import { AppBar, Button, Stack, Toolbar, Typography } from '@mui/material';
 import React from 'react';
 import LoginButton from '../LoginButton';
 import LogoutButton from '../LogoutButton'
@@ -7,12 +7,16 @@ import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
 
-    const { isAuthenticated } = useAuth0(); 
+    const { logout, isAuthenticated } = useAuth0(); 
 
     const navigateTo = useNavigate();
 
     const handleProfileClick = async () => {
         navigateTo('/profile');
+    };
+
+    const handleHomeClick = () => {
+        navigateTo('/');
     };
 
     function downloadFile({ data, fileName, fileType }) {
@@ -70,8 +74,17 @@ const Header = () => {
         <AppBar position='static'>
             <Toolbar>
                 <Stack direction='row' spacing ='1rem' alignItems={'center'}>
+                    <Button variant='contained' onClick={handleHomeClick}>
+                        <Typography>Home</Typography>
+                    </Button>
                     <LoginButton />
                     <LogoutButton />
+                    {isAuthenticated ? 
+                        <Button variant='contained' onClick={logout}>
+                            Odjava na auth0
+                        </Button>
+                        : undefined
+                    }
                     {isAuthenticated ? 
                         <Button variant='contained' onClick={handleProfileClick}>
                             Korisnički profil
